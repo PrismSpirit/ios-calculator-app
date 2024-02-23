@@ -6,11 +6,6 @@
 
 import UIKit
 
-enum StringForm {
-    case input
-    case output
-}
-
 extension UIScrollView {
     func moveToBottom(animated: Bool) {
         guard self.contentSize.height >= self.bounds.height else { return }
@@ -44,6 +39,11 @@ fileprivate extension String {
 }
 
 class ViewController: UIViewController {
+    enum StringForm {
+        case input
+        case output
+    }
+    
     var expression = ""
     var `operator`: Operator?
     var operand = "0"
