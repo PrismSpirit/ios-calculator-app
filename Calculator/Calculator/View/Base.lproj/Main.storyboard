@@ -364,6 +364,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logsScrollView" destination="BOT-7g-vxv" id="QnV-On-Slc"/>
                         <outlet property="logsStackView" destination="XRe-QE-UJf" id="689-Cl-1rR"/>
                         <outlet property="operandLabel" destination="Lwz-OF-XHD" id="kt3-gV-R5F"/>
                         <outlet property="operatorLabel" destination="HPC-iy-qdm" id="mr2-PY-bxX"/>

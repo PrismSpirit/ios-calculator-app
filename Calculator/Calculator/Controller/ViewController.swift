@@ -11,6 +11,14 @@ enum StringForm {
     case output
 }
 
+extension UIScrollView {
+    func moveToBottom(animated: Bool) {
+        guard self.contentSize.height >= self.bounds.height else { return }
+        let bottomOffSet = CGPoint(x: 0, y: self.contentSize.height - self.bounds.height)
+        self.setContentOffset(bottomOffSet, animated: animated)
+    }
+}
+
 fileprivate extension String {
     func toFormattedString(style: NumberFormatter.Style) -> String {
         let numberFormatter = NumberFormatter()
@@ -45,6 +53,7 @@ class ViewController: UIViewController {
     @IBOutlet var operatorLabel: UILabel!
     @IBOutlet var operandLabel: UILabel!
     @IBOutlet var logsStackView: UIStackView!
+    @IBOutlet var logsScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +105,8 @@ class ViewController: UIViewController {
         logStackView.addArrangedSubview(operandLog)
         
         stackView.addArrangedSubview(logStackView)
+        logsScrollView.layoutIfNeeded()
+        logsScrollView.moveToBottom(animated: true)
     }
     
     func updateExpression() {
