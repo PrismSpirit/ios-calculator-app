@@ -77,21 +77,27 @@ class ViewController: UIViewController {
         logStackView.axis = .horizontal
         logStackView.spacing = 8
         
-        let operatorLog = UILabel()
-        operatorLog.textColor = .white
-        operatorLog.font = .preferredFont(forTextStyle: .title3)
-        operatorLog.textAlignment = .right
-        operatorLog.adjustsFontForContentSizeCategory = true
-        operatorLog.adjustsFontSizeToFitWidth = true
-        operatorLog.minimumScaleFactor = 0.5
+        let operatorLog: UILabel = {
+            let label = UILabel()
+            label.textColor = .white
+            label.font = .preferredFont(forTextStyle: .title3)
+            label.textAlignment = .right
+            label.adjustsFontForContentSizeCategory = true
+            label.adjustsFontSizeToFitWidth = true
+            label.minimumScaleFactor = 0.5
+            return label
+        }()
         
-        let operandLog = UILabel()
-        operandLog.textColor = .white
-        operatorLog.font = .preferredFont(forTextStyle: .title3)
-        operatorLog.textAlignment = .right
-        operatorLog.adjustsFontForContentSizeCategory = true
-        operatorLog.adjustsFontSizeToFitWidth = true
-        operatorLog.minimumScaleFactor = 0.5
+        let operandLog: UILabel = {
+            let label = UILabel()
+            label.textColor = .white
+            label.font = .preferredFont(forTextStyle: .title3)
+            label.textAlignment = .right
+            label.adjustsFontForContentSizeCategory = true
+            label.adjustsFontSizeToFitWidth = true
+            label.minimumScaleFactor = 0.5
+            return label
+        }()
         
         if let `operator` = `operator` {
             operatorLog.text = String(`operator`.rawValue)
